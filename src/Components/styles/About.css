@@ -1,0 +1,61 @@
+/* Global Reset (if not already set elsewhere) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* About Section Container */
+  .About-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* "We Are Corsair" Text */
+  .About-Name {
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Fluid size between 0.8rem and 1rem */
+    color: white;
+    letter-spacing: 0.1rem;
+  }
+  
+  /* Main Quote Styling */
+  .About-Qoute {
+    font-size: clamp(3rem, 6vw, 6rem); /* Fluid size between 2rem and 5rem */
+    color: white;
+    margin: 1rem 0;
+    line-height: 1.2;
+  }
+
+
+  
+  /* Tablet Adjustments (max-width: 768px) */
+  @media (max-width: 768px) {
+    .About-Container {
+      height: auto;
+      padding: 2rem 1rem;
+    }
+    .About-Qoute {
+      font-size: 3rem;
+    }
+    .About-Name {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Mobile Adjustments (max-width: 480px) */
+  @media (max-width: 480px) {
+    .About-Qoute {
+      font-size: 2.5rem;
+    }
+    .About-Name {
+      font-size: 0.8rem;
+    }
+  }
+  
