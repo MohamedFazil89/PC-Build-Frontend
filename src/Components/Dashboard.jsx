@@ -12,8 +12,14 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   const navigateToBookingPage = (id) => {
-    navigate("/Booking", { state: { productId: id } });
+    // In your Dashboard component:
+    navigate(`/Booking?productId=${id}`);
   };
+  const Gaming_PC = CardData.Products.filter(product => product.type === "Gaming_PC");
+  const BUDGETPC = CardData.Products.filter(product => product.type === "BUDGET_PC");
+  const MINI_PC = CardData.Products.filter(product => product.type === "MINI_PC");
+  const WORK_STATION = CardData.Products.filter(product => product.type === "WORK_STATION");
+
 
   return (
     <div>
@@ -38,7 +44,7 @@ export default function Dashboard() {
 
       <p className='PC_TYPE_NAME'>Gaming PC</p>
       <section className="Catlog">
-        {CardData.gamingPCItems.map((item) => (
+        {Gaming_PC.map((item) => (
           <Cart
             key={item.id}
             title={item.title}
@@ -52,7 +58,7 @@ export default function Dashboard() {
 
       <p className='PC_TYPE_NAME'>BUDGET PC</p>
       <section className="Catlog">
-        {CardData.budgetPCItems.map((item) => (
+        {BUDGETPC.map((item) => (
           <Cart
             key={item.id}
             title={item.title}
@@ -66,7 +72,7 @@ export default function Dashboard() {
 
       <p className='PC_TYPE_NAME'>MINI PC</p>
       <section className="Catlog">
-        {CardData.miniPCItems.map((item) => (
+        {MINI_PC.map((item) => (
           <Cart
             key={item.id}
             title={item.title}
@@ -80,7 +86,7 @@ export default function Dashboard() {
 
       <p className='PC_TYPE_NAME'>WORK STATIONS</p>
       <section className="Catlog">
-        {CardData.workstationPCItems.map((item) => (
+        {WORK_STATION.map((item) => (
           <Cart
             key={item.id}
             title={item.title}
