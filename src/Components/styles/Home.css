@@ -14,7 +14,7 @@
   height: 100vh;
   position: relative;
   border: 1rem solid black;
-  overflow: hidden;
+  overflow-x: hidden;
   text-align: center;
 }
 
@@ -83,6 +83,15 @@
 
 .Catlog {
   display: flex;
+}
+
+.PC_TYPE_NAME{
+  font-size: 3rem;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid white;
+  margin: 1rem;
 }
 
 /* Responsive Adjustments */

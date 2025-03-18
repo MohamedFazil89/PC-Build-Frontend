@@ -8,9 +8,9 @@
 /* Root Variables */
 :root {
   --card-bg: #1e1e1e; /* Dark grey background */
-  --card-gradient: linear-gradient(135deg, #ffffff, #005c66, #ffffff); /* Metallic, techy gradient */
-  --text-color: #e0e0e0;
-  --accent-color: #00e5ff;
+  --card-gradient: linear-gradient(135deg, white, grey, white); /* Metallic, techy gradient */
+  --text-color: black;
+  --accent-color: black;
   --transition-speed: 0.5s;
   --border-radius: 1rem;
 }
@@ -91,7 +91,7 @@
   background-color: var(--accent-color);
   padding: 0.5rem 1rem;
   text-align: center;
-  color: #000;
+  color: white;
   margin: 1rem 0;
   border-radius: 4px;
   cursor: pointer;

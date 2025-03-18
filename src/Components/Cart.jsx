@@ -1,9 +1,9 @@
 import "./styles/Cart.css"
 
 
-export default function Cart({ id, img, title, description, price }) {
+export default function Cart({ id, img, title, description, price,handelProductClick }) {
     return (
-        <div className="card" style={{ color: "white" }}>
+        <div className="card" style={{ color: "white" }} onClick={handelProductClick}>
             <section className="img-container">
             <img src={img} className="card__img" alt={title} />
             </section>
@@ -15,7 +15,7 @@ export default function Cart({ id, img, title, description, price }) {
                     <p className="card__description">{description}</p>
                 </section>
                 <button className="card__btn">
-                    Add to Cart
+                    BOOK NOW
                 </button>
             </div>
         </div>

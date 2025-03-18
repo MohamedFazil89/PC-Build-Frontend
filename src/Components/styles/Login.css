@@ -109,6 +109,13 @@
     text-align: center;
   }
   
+.Catlog{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
   /* Responsive Adjustments */
   
   /* Tablets (max-width: 768px) */

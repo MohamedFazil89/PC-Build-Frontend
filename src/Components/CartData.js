@@ -1,14 +1,36 @@
+import Product from "../assets/react.svg"
+
 const gamingPCItems = [
     {
         id: 1,
-        img: "https://images.unsplash.com/photo-1616627988015-8bd1b15b59d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        img:"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTGvHEDh7myBjwY7N4fC4NcYhOhWmgIb9nRB6bmzpaD_yg9CgUJ-ndMpmRmySpq1Ikaqrg1F9b-_2n-5lFpNgB_vr_dLnGsxTuFwmb1CFMJJFsRbUdeHhDN",
         title: "Gaming Beast X",
         description: "Prebuilt gaming PC with RTX 3080, Intel i7, 16GB RAM, and high-refresh-rate monitor for immersive gameplay.",
         price: "1499.99",
     },
     {
         id: 2,
-        img: "https://images.unsplash.com/photo-1606813902069-d58f29ea28b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        img:"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTGvHEDh7myBjwY7N4fC4NcYhOhWmgIb9nRB6bmzpaD_yg9CgUJ-ndMpmRmySpq1Ikaqrg1F9b-_2n-5lFpNgB_vr_dLnGsxTuFwmb1CFMJJFsRbUdeHhDN",
+        title: "Gaming Titan Z",
+        description: "High performance prebuilt rig featuring AMD Ryzen 9, RTX 3090, and liquid cooling for peak performance.",
+        price: "2199.99",
+    },
+    {
+        id: 9,
+        img:"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTGvHEDh7myBjwY7N4fC4NcYhOhWmgIb9nRB6bmzpaD_yg9CgUJ-ndMpmRmySpq1Ikaqrg1F9b-_2n-5lFpNgB_vr_dLnGsxTuFwmb1CFMJJFsRbUdeHhDN",
+        title: "Gaming Titan Z",
+        description: "High performance prebuilt rig featuring AMD Ryzen 9, RTX 3090, and liquid cooling for peak performance.",
+        price: "2199.99",
+    },
+    {
+        id: 10,
+        img:"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTGvHEDh7myBjwY7N4fC4NcYhOhWmgIb9nRB6bmzpaD_yg9CgUJ-ndMpmRmySpq1Ikaqrg1F9b-_2n-5lFpNgB_vr_dLnGsxTuFwmb1CFMJJFsRbUdeHhDN",
+        title: "Gaming Titan Z",
+        description: "High performance prebuilt rig featuring AMD Ryzen 9, RTX 3090, and liquid cooling for peak performance.",
+        price: "2199.99",
+    },    {
+        id: 11,
+        img:"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTGvHEDh7myBjwY7N4fC4NcYhOhWmgIb9nRB6bmzpaD_yg9CgUJ-ndMpmRmySpq1Ikaqrg1F9b-_2n-5lFpNgB_vr_dLnGsxTuFwmb1CFMJJFsRbUdeHhDN",
         title: "Gaming Titan Z",
         description: "High performance prebuilt rig featuring AMD Ryzen 9, RTX 3090, and liquid cooling for peak performance.",
         price: "2199.99",

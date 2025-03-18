@@ -1,13 +1,20 @@
 import React from 'react';
 import Nav from './Nav';
 import "./styles/Home.css";
-import BGVideo from "../assets/13057075_3840_2160_24fps.mp4"
+import BGVideo from "../assets/13057075_3840_2160_24fps.mp4";
 import About from './About';
-import Cart from "./Cart"
-import CardData from "./CartData.js"
-
+import Cart from "./Cart";
+import CardData from "./CartData.js";
+import Contact from "./Contact";
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+
+  const navigateToBookingPage = (id) => {
+    navigate("/Booking", { state: { productId: id } });
+  };
+
   return (
     <div>
       <Nav />
@@ -26,19 +33,66 @@ export default function Dashboard() {
         <button className='BUILD-BTN'>BUILD YOUR OWN</button>
       </section>
       <section className="AboutContainer">
-      <About />
+        <About />
       </section>
+
+      <p className='PC_TYPE_NAME'>Gaming PC</p>
       <section className="Catlog">
-      {CardData.gamingPCItems.map((item) => (
+        {CardData.gamingPCItems.map((item) => (
           <Cart
             key={item.id}
             title={item.title}
             price={item.price}
             description={item.description}
+            img={item.img}
+            handelProductClick={() => navigateToBookingPage(item.id)}
           />
         ))}
       </section>
 
+      <p className='PC_TYPE_NAME'>BUDGET PC</p>
+      <section className="Catlog">
+        {CardData.budgetPCItems.map((item) => (
+          <Cart
+            key={item.id}
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            img={item.img}
+            handelProductClick={() => navigateToBookingPage(item.id)}
+          />
+        ))}
+      </section>
+
+      <p className='PC_TYPE_NAME'>MINI PC</p>
+      <section className="Catlog">
+        {CardData.miniPCItems.map((item) => (
+          <Cart
+            key={item.id}
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            img={item.img}
+            handelProductClick={() => navigateToBookingPage(item.id)}
+          />
+        ))}
+      </section>
+
+      <p className='PC_TYPE_NAME'>WORK STATIONS</p>
+      <section className="Catlog">
+        {CardData.workstationPCItems.map((item) => (
+          <Cart
+            key={item.id}
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            img={item.img}
+            handelProductClick={() => navigateToBookingPage(item.id)}
+          />
+        ))}
+      </section>
+
+      <Contact />
     </div>
-  )
+  );
 }
