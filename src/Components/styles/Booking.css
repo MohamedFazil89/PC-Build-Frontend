@@ -1,0 +1,230 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Root Variables */
+  :root {
+    --bg-dark: #121212;
+    --form-bg: #1e1e1e;
+    --accent-color: #00e5ff;
+    --accent-dark: #00b8d4;
+    --text-light: #e0e0e0;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+  }
+  
+  /* Booking Page Container */
+  .booking-page {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  /* Product Display Section */
+  .booking-product {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  }
+  
+  .product-image {
+    flex: 0 0 300px;
+    max-width: 300px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .product-details {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .product-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+  
+  /* Booking Form Section */
+  .booking-form-section {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--form-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+  }
+  
+  /* Form Group */
+  .booking-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .booking-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-light);
+  }
+  
+  .booking-form input,
+  .booking-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #2a2a2a;
+    color: var(--text-light);
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  }
+  
+  .booking-form input:focus,
+  .booking-form textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
+    outline: none;
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-dark));
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--bg-dark);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .submit-button:hover {
+    background: linear-gradient(45deg, var(--accent-dark), var(--accent-color));
+  }
+  
+  /* Order Success Message */
+  .order-success {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--form-bg);
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Product Not Found Message */
+  .product-not-found {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+  }
+  
+  /* Responsive Adjustments */
+  
+  /* Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .booking-product {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+    
+    .product-image {
+      width: 100%;
+      max-width: 400px;
+      height: 220px;
+    }
+    
+    .product-title {
+      font-size: 1.8rem;
+    }
+    
+    .booking-form-section {
+      padding: 1.5rem;
+    }
+    
+    .form-title {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Mobile Devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .booking-product {
+      padding: 1rem;
+    }
+    
+    .product-image {
+      width: 100%;
+      max-width: 100%;
+      height: 180px;
+    }
+    
+    .product-title {
+      font-size: 1.6rem;
+    }
+    
+    .product-description, .product-price {
+      font-size: 0.9rem;
+    }
+    
+    .booking-form-section {
+      padding: 1rem;
+    }
+    
+    .form-title {
+      font-size: 1.6rem;
+    }
+    
+    .booking-form input,
+    .booking-form textarea {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+    
+    .submit-button {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+  }
+  

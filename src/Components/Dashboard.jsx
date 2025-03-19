@@ -1,4 +1,5 @@
-import React from 'react';
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Nav from './Nav';
 import "./styles/Home.css";
 import BGVideo from "../assets/13057075_3840_2160_24fps.mp4";
@@ -9,16 +10,34 @@ import Contact from "./Contact";
 import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
+  const [Products, setProducts] = useState([]);
   const navigate = useNavigate();
 
   const navigateToBookingPage = (id) => {
     // In your Dashboard component:
     navigate(`/Booking?productId=${id}`);
   };
-  const Gaming_PC = CardData.Products.filter(product => product.type === "Gaming_PC");
-  const BUDGETPC = CardData.Products.filter(product => product.type === "BUDGET_PC");
-  const MINI_PC = CardData.Products.filter(product => product.type === "MINI_PC");
-  const WORK_STATION = CardData.Products.filter(product => product.type === "WORK_STATION");
+  useEffect(() => {
+    const handleFetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/products");
+        console.log("Fetched products:", response.data);
+        setProducts(response.data.Product_Collection);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      }
+    };
+
+    handleFetchData();
+  }, []);
+
+   
+
+
+  const Gaming_PC = Products.filter(product => product.type === "Gaming_PC");
+  const BUDGETPC = Products.filter(product => product.type === "BUDGET_PC");
+  const MINI_PC = Products.filter(product => product.type === "MINI_PC");
+  const WORK_STATION = Products.filter(product => product.type === "WORK_STATION");
 
 
   return (
@@ -36,7 +55,7 @@ export default function Dashboard() {
         ></video>
         <p className='Top-title'>EVERYTHING YOU NEED</p>
         <p className='Bold-title'>TO <span>PERFORM</span> YOUR BEST</p>
-        <button className='BUILD-BTN'>BUILD YOUR OWN</button>
+        <button className='BUILD-BTN' onClick={() => navigate("/CustomBuild")}>BUILD YOUR OWN</button>
       </section>
       <section className="AboutContainer">
         <About />

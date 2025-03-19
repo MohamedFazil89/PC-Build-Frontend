@@ -20,8 +20,6 @@
   width: 320px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 1rem;
   margin-top: 3rem;
   position: relative;
@@ -43,6 +41,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #000;
+
+}
+.card__description{
+  color: black;
 }
 
 /* Image Container */
@@ -72,6 +75,10 @@
   color: var(--text-color);
 }
 
+.card__title{
+  color: #000;
+
+}
 /* Title Selection Effect */
 .card__title::selection {
   background-color: #fff;
@@ -80,9 +87,10 @@
 
 /* Price Styling */
 .card__price {
-  color: var(--text-color);
   font-weight: bold;
   font-size: 1.2rem;
+  color: #000;
+
 }
 
 /* Button Styling */
@@ -99,7 +107,8 @@
 }
 
 .card__btn:hover {
-  background-color: #00b8d4;
+  background-color: yellow;
+  color: #000;
 }
 
 /* Responsive Adjustments */
