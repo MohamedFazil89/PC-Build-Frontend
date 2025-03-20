@@ -43,7 +43,7 @@ export default function BuildNow() {
             <span className="product_description">
             <p className="product_title">{product.title}</p>
             <p className="product_description">{product.description}</p>
-            <p className="product_price">{product.price}</p>
+            <p className="product_price">${product.price}</p>
             <p className="product_type">{product.type}</p>
             <button onClick={selectedComponent(product.id)}>Select</button>
             </span>
