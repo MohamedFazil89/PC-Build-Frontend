@@ -27,6 +27,9 @@ export default function BuildNow() {
     cooling_System: 0,
     operatingsystem: 0,
   });
+  
+  // State to keep track of the active nav item
+  const [activeComponent, setActiveComponent] = useState("Processor");
 
   const Processor = PC_Components.filter((product) => product.type === "Processor");
   const Motherboard = PC_Components.filter((product) => product.type === "Motherboard");
@@ -72,21 +75,71 @@ export default function BuildNow() {
   const totalRate = Math.floor(
     selectedComponents.reduce((sum, product) => sum + Number(product.price), 0)
   );
-  
+
+  // Function to handle nav item click
+  const handleNavClick = (componentName, componentArray) => {
+    setComponentList(componentArray);
+    setActiveComponent(componentName);
+  };
 
   return (
     <div className="Custom_PC_Container">
       <nav className="Component_Names">
         <ul>
-          <li onClick={() => setComponentList(Processor)}>Processor</li>
-          <li onClick={() => setComponentList(Motherboard)}>Motherboard</li>
-          <li onClick={() => setComponentList(Memory_RAM)}>Memory (RAM)</li>
-          <li onClick={() => setComponentList(Storage_SSD_HDD)}>Storage (SSD/HDD)</li>
-          <li onClick={() => setComponentList(Graphics_Card)}>Graphics Card (GPU)</li>
-          <li onClick={() => setComponentList(Power_Supply_Unit)}>Power Supply Unit (PSU)</li>
-          <li onClick={() => setComponentList(Computer_Case)}>Computer Case</li>
-          <li onClick={() => setComponentList(Cooling_System)}>Cooling System</li>
-          <li onClick={() => setComponentList(Operating_System)}>Operating System</li>
+          <li 
+            className={activeComponent === "Processor" ? "active" : ""}
+            onClick={() => handleNavClick("Processor", Processor)}
+          >
+            Processor
+          </li>
+          <li 
+            className={activeComponent === "Motherboard" ? "active" : ""}
+            onClick={() => handleNavClick("Motherboard", Motherboard)}
+          >
+            Motherboard
+          </li>
+          <li 
+            className={activeComponent === "Memory (RAM)" ? "active" : ""}
+            onClick={() => handleNavClick("Memory (RAM)", Memory_RAM)}
+          >
+            Memory (RAM)
+          </li>
+          <li 
+            className={activeComponent === "Storage (SSD/HDD)" ? "active" : ""}
+            onClick={() => handleNavClick("Storage (SSD/HDD)", Storage_SSD_HDD)}
+          >
+            Storage (SSD/HDD)
+          </li>
+          <li 
+            className={activeComponent === "Graphics Card (GPU)" ? "active" : ""}
+            onClick={() => handleNavClick("Graphics Card (GPU)", Graphics_Card)}
+          >
+            Graphics Card (GPU)
+          </li>
+          <li 
+            className={activeComponent === "Power Supply Unit (PSU)" ? "active" : ""}
+            onClick={() => handleNavClick("Power Supply Unit (PSU)", Power_Supply_Unit)}
+          >
+            Power Supply Unit (PSU)
+          </li>
+          <li 
+            className={activeComponent === "Computer Case" ? "active" : ""}
+            onClick={() => handleNavClick("Computer Case", Computer_Case)}
+          >
+            Computer Case
+          </li>
+          <li 
+            className={activeComponent === "Cooling System" ? "active" : ""}
+            onClick={() => handleNavClick("Cooling System", Cooling_System)}
+          >
+            Cooling System
+          </li>
+          <li 
+            className={activeComponent === "Operating System" ? "active" : ""}
+            onClick={() => handleNavClick("Operating System", Operating_System)}
+          >
+            Operating System
+          </li>
         </ul>
       </nav>
       <section className="ComponentList">
@@ -126,15 +179,14 @@ export default function BuildNow() {
                 </span>
               </div>
             ))}
-            
           </section>
-          
         )}
-        
       </section>
-     {LastCom && <div className="total_rate">
-              <h3>Total Price: ${totalRate}</h3>
-            </div>}
+      {LastCom && (
+        <div className="total_rate">
+          <h3>Total Price: ${totalRate}</h3>
+        </div>
+      )}
     </div>
   );
 }
