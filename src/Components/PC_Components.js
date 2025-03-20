@@ -1,143 +1,144 @@
 const ComponentsData = [
     {
       id: 1,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-sSiKlqWCLn3T02MFk_2pnLs1smsVzaUhCQ&s",
+      img:"https://m.media-amazon.com/images/I/61m8egNHmEL._AC_UF350,350_QL80_.jpg",
       title: "Intel Core i9-13900K",
       description: "High-performance CPU for gaming and productivity.",
-      price: "589.99",
+      price: "58999",
       type: "Processor"
     },
     {
       id: 2,
-      img: "https://via.placeholder.com/150?text=AMD+Ryzen+9+7950X",
+      img:"https://m.media-amazon.com/images/I/51jNS8epPeL._AC_UF1000,1000_QL80_.jpg",
       title: "AMD Ryzen 9 7950X",
       description: "Powerful processor with excellent multitasking.",
-      price: "549.99",
+      price: "54999",
       type: "Processor"
     },
     {
       id: 3,
-      img: "https://via.placeholder.com/150?text=Intel+Core+i7-13700K",
+      img:"https://m.media-amazon.com/images/I/515lU6LNpsL.jpg",
       title: "Intel Core i7-13700K",
       description: "Balanced performance for gaming and content creation.",
-      price: "429.99",
+      price: "42999",
       type: "Processor"
     },
     {
       id: 4,
-      img: "https://via.placeholder.com/150?text=AMD+Ryzen+7+7700X",
+      img:"https://m.media-amazon.com/images/I/51hfER1cZVL.jpg",
       title: "AMD Ryzen 7 7700X",
       description: "Excellent for gaming with high clock speeds.",
-      price: "359.99",
+      price: "35999",
       type: "Processor"
     },
     {
       id: 5,
-      img: "https://via.placeholder.com/150?text=Intel+Core+i5-13600K",
+      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQowFDFQBPb4ZYmkMOP1tUORDzZOjndKu5WzQ&s",
       title: "Intel Core i5-13600K",
       description: "Mid-range CPU ideal for modern gaming and daily tasks.",
-      price: "299.99",
+      price: "29999",
       type: "Processor"
     },
     {
       id: 6,
-      img: "https://via.placeholder.com/150?text=AMD+Ryzen+5+7600X",
+      img:"https://www.amd.com/content/dam/amd/en/images/products/processors/ryzen/2505503-ryzen-5-7600x.jpg",
       title: "AMD Ryzen 5 7600X",
       description: "Affordable performance for budget gaming builds.",
-      price: "249.99",
+      price: "24999",
       type: "Processor"
     },
     {
       id: 7,
-      img: "https://via.placeholder.com/150?text=Intel+Core+i3-13100",
+      img:"https://compumise.in/wp-content/uploads/2023/03/19-118-432-03.png",
       title: "Intel Core i3-13100",
       description: "Entry-level processor for basic computing tasks.",
-      price: "159.99",
+      price: "15999",
       type: "Processor"
     },
     {
       id: 8,
-      img: "https://via.placeholder.com/150?text=AMD+Athlon+3000G",
+      img:"https://www.techpowerup.com/review/amd-athlon-3000g-with-vega-3-graphics/images/package1.jpg",
       title: "AMD Athlon 3000G",
       description: "Budget-friendly CPU for everyday use.",
-      price: "89.99",
+      price: "8999",
       type: "Processor"
     },
     {
       id: 9,
-      img: "https://via.placeholder.com/150?text=Intel+Pentium+Gold",
+      img:"https://parshvacomputers.co.in/public/uploads/all/N3ZklhmXmHGxeiT5hhVtlIQ9lCor69AlsZisbeba.jpg",
       title: "Intel Pentium Gold G6400",
       description: "Efficient processor for light multitasking.",
-      price: "109.99",
+      price: "10999",
       type: "Processor"
     },
     {
       id: 10,
-      img: "https://via.placeholder.com/150?text=AMD+Ryzen+3+4100",
+      img:"https://5.imimg.com/data5/SELLER/Default/2022/6/UJ/NB/AE/110783022/amd-4000-series-ryzen-3-4100-desktop-processor.jpg",
       title: "AMD Ryzen 3 4100",
       description: "Basic CPU for cost-effective computing.",
-      price: "129.99",
+      price: "12999",
       type: "Processor"
     },
+
     {
       id: 11,
-      img: "https://via.placeholder.com/150?text=ASUS+ROG+Strix+Z790-E",
+      img: "https://dlcdnwebimgs.asus.com/files/media/E8F9316B-CB25-42B5-9422-CA99338CDB38/v1/img/kv/ROG-STRIX-Z790-E-II.png",
       title: "ASUS ROG Strix Z790-E",
       description: "Premium motherboard with robust power delivery.",
-      price: "399.99",
+      price: "39999",
       type: "Motherboard"
     },
     {
       id: 12,
-      img: "https://via.placeholder.com/150?text=MSI+MEG+Z690+Unify",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpL-iSGPgUU0zQslnCGn4Cj5J3t2Nv6ap8_g&s",
       title: "MSI MEG Z690 Unify",
       description: "High-performance board with advanced cooling features.",
-      price: "379.99",
+      price: "37999",
       type: "Motherboard"
     },
     {
       id: 13,
-      img: "https://via.placeholder.com/150?text=Gigabyte+AORUS+X670",
+      img: "https://m.media-amazon.com/images/I/71ubTinPcOL._AC_UF1000,1000_QL80_.jpg",
       title: "Gigabyte AORUS X670",
       description: "Feature-rich motherboard for AMD builds.",
-      price: "349.99",
+      price: "34999",
       type: "Motherboard"
     },
     {
       id: 14,
-      img: "https://via.placeholder.com/150?text=ASRock+B660M+Pro4",
+      img: "https://m.media-amazon.com/images/I/91NU8vKX0WL.jpg",
       title: "ASRock B660M Pro4",
       description: "Affordable board with essential features.",
-      price: "129.99",
+      price: "12999",
       type: "Motherboard"
     },
     {
       id: 15,
-      img: "https://via.placeholder.com/150?text=MSI+B550-A+Pro",
+      img: "https://m.media-amazon.com/images/I/917DzuUbxxL.jpg",
       title: "MSI B550-A Pro",
       description: "Solid motherboard for mid-range AMD builds.",
-      price: "149.99",
+      price: "14999",
       type: "Motherboard"
     },
     {
       id: 16,
-      img: "https://via.placeholder.com/150?text=ASUS+Prime+B660-Plus",
+      img: "https://computersolutionranchi.com/wp-content/uploads/2022/12/81ooBORY4aL._SX522_.jpg",
       title: "ASUS Prime B660-Plus",
       description: "Reliable board for Intel 12th gen processors.",
-      price: "159.99",
+      price: "15999",
       type: "Motherboard"
     },
     {
       id: 17,
-      img: "https://via.placeholder.com/150?text=Gigabyte+Z690+Aorus+Elite",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRILAtZSIblQz4eaZQGrFqNSqbXupjdderB4g&s",
       title: "Gigabyte Z690 Aorus Elite",
       description: "High-end motherboard with excellent connectivity.",
-      price: "299.99",
+      price: "29999",
       type: "Motherboard"
     },
     {
       id: 18,
-      img: "https://via.placeholder.com/150?text=ASRock+X570+Taichi",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMdc3YRjC_f23Q-eDVAM--jePgIGME2p9WvQ&s",
       title: "ASRock X570 Taichi",
       description: "Feature-packed board for high-performance AMD systems.",
       price: "399.99",
@@ -145,7 +146,7 @@ const ComponentsData = [
     },
     {
       id: 19,
-      img: "https://via.placeholder.com/150?text=Biostar+B660M+Pro+",
+      img: "https://m.media-amazon.com/images/I/61oGooBNNGL.jpg",
       title: "Biostar B660M Pro+",
       description: "Compact board with good performance for budget builds.",
       price: "119.99",
@@ -153,7 +154,7 @@ const ComponentsData = [
     },
     {
       id: 20,
-      img: "https://via.placeholder.com/150?text=ASUS+TUF+Gaming+B550-Plus",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzFznTJSFKg6bBQGWMU9BqljWfO-SyYtevyw&s",
       title: "ASUS TUF Gaming B550-Plus",
       description: "Durable motherboard designed for gaming and stability.",
       price: "169.99",
@@ -161,10 +162,10 @@ const ComponentsData = [
     },
     {
       id: 21,
-      img: "https://via.placeholder.com/150?text=Corsair+Vengeance+LPX+16GB",
+      img: "https://m.media-amazon.com/images/I/51Gs2sm696L.jpg",
       title: "Corsair Vengeance LPX 16GB",
       description: "High-speed DDR4 RAM ideal for gaming and multitasking.",
-      price: "79.99",
+      price: "3999",
       type: "Memory (RAM)"
     },
     {

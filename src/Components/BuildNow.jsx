@@ -149,7 +149,7 @@ export default function BuildNow() {
             <span className="product_description">
               <p className="product_title">{product.title}</p>
               <p className="product_description">{product.description}</p>
-              <p className="product_price">${product.price}</p>
+              <p className="product_price">₹{product.price}</p>
               <p className="product_type">{product.type}</p>
               <button
                 onClick={() => handleSelectComponent(product)}
@@ -174,7 +174,7 @@ export default function BuildNow() {
                   <p className="booking_product_description">
                     {product.description}
                   </p>
-                  <p className="booking_product_price">${product.price}</p>
+                  <p className="booking_product_price">₹{product.price}</p>
                   <p className="booking_product_type">{product.type}</p>
                 </span>
               </div>
@@ -184,7 +184,7 @@ export default function BuildNow() {
       </section>
       {LastCom && (
         <div className="total_rate">
-          <h3>Total Price: ${totalRate}</h3>
+          <h3>Total Price: ₹{totalRate}</h3>
         </div>
       )}
     </div>
