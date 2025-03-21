@@ -18,7 +18,7 @@ const typeMap = {
 };
 
 export default function BuildNow() {
-  const [LastCom, setLastCom] = useState(false);
+  // Removed LastCom state as we now check if all are selected
   const [buildComponents, setBuildComponents] = useState({
     processor: 0,
     motherboard: 0,
@@ -37,15 +37,33 @@ export default function BuildNow() {
   // State to keep track of the active nav item
   const [activeComponent, setActiveComponent] = useState("Processor");
 
-  const Processor = PC_Components.filter((product) => product.type === "Processor");
-  const Motherboard = PC_Components.filter((product) => product.type === "Motherboard");
-  const Memory_RAM = PC_Components.filter((product) => product.type === "Memory (RAM)");
-  const Storage_SSD_HDD = PC_Components.filter((product) => product.type === "Storage (SSD/HDD)");
-  const Graphics_Card = PC_Components.filter((product) => product.type === "Graphics Card (GPU)");
-  const Power_Supply_Unit = PC_Components.filter((product) => product.type === "Power Supply Unit (PSU)");
-  const Computer_Case = PC_Components.filter((product) => product.type === "Computer Case");
-  const Cooling_System = PC_Components.filter((product) => product.type === "Cooling System");
-  const Operating_System = PC_Components.filter((product) => product.type === "Operating System");
+  const Processor = PC_Components.filter(
+    (product) => product.type === "Processor"
+  );
+  const Motherboard = PC_Components.filter(
+    (product) => product.type === "Motherboard"
+  );
+  const Memory_RAM = PC_Components.filter(
+    (product) => product.type === "Memory (RAM)"
+  );
+  const Storage_SSD_HDD = PC_Components.filter(
+    (product) => product.type === "Storage (SSD/HDD)"
+  );
+  const Graphics_Card = PC_Components.filter(
+    (product) => product.type === "Graphics Card (GPU)"
+  );
+  const Power_Supply_Unit = PC_Components.filter(
+    (product) => product.type === "Power Supply Unit (PSU)"
+  );
+  const Computer_Case = PC_Components.filter(
+    (product) => product.type === "Computer Case"
+  );
+  const Cooling_System = PC_Components.filter(
+    (product) => product.type === "Cooling System"
+  );
+  const Operating_System = PC_Components.filter(
+    (product) => product.type === "Operating System"
+  );
 
   // Display the Processor list initially
   const [componentList, setComponentList] = useState(Processor);
@@ -62,11 +80,6 @@ export default function BuildNow() {
       ...prev,
       [key]: product.id,
     }));
-
-    // If the user selects the Operating System, consider it the last component.
-    if (product.type === "Operating System") {
-      setLastCom(true);
-    }
 
     console.log(`Selected ${product.title} for ${key}`);
   };
@@ -88,13 +101,19 @@ export default function BuildNow() {
     setActiveComponent(componentName);
   };
 
+  // Get the selected id for the current active category
+  const currentSelectedId = buildComponents[typeMap[activeComponent]];
+
+  // Check if all components have been selected (i.e., no value is 0)
+  const allSelected = Object.values(buildComponents).every(
+    (value) => value !== 0
+  );
+
+  // Dispatch selected components and navigate to checkout page
   const handleBookNow = () => {
     dispatch(setSelectedComponents(selectedComponents));
     navigate("/checkout");
   };
-
-  // Get the selected id for the current active category
-  const currentSelectedId = buildComponents[typeMap[activeComponent]];
 
   return (
     <div className="Custom_PC_Container">
@@ -126,13 +145,17 @@ export default function BuildNow() {
           </li>
           <li
             className={activeComponent === "Graphics Card (GPU)" ? "active" : ""}
-            onClick={() => handleNavClick("Graphics Card (GPU)", Graphics_Card)}
+            onClick={() =>
+              handleNavClick("Graphics Card (GPU)", Graphics_Card)
+            }
           >
             Graphics Card (GPU)
           </li>
           <li
             className={activeComponent === "Power Supply Unit (PSU)" ? "active" : ""}
-            onClick={() => handleNavClick("Power Supply Unit (PSU)", Power_Supply_Unit)}
+            onClick={() =>
+              handleNavClick("Power Supply Unit (PSU)", Power_Supply_Unit)
+            }
           >
             Power Supply Unit (PSU)
           </li>
@@ -160,8 +183,9 @@ export default function BuildNow() {
         {componentList.map((product, index) => (
           <div
             key={index}
-            className={`product_card ${currentSelectedId === product.id ? "selected" : ""
-              }`}
+            className={`product_card ${
+              currentSelectedId === product.id ? "selected" : ""
+            }`}
           >
             <img src={product.img} alt={product.title} className="product_img" />
             <span className="product_description">
@@ -178,9 +202,10 @@ export default function BuildNow() {
             </span>
           </div>
         ))}
-        <p>Your Cart</p>
 
-        {LastCom && (
+        {allSelected && <p>Your Cart</p>}
+
+        {allSelected && (
           <section className="BookPC">
             {selectedComponents.map((product, index) => (
               <div key={index} className="booking_product_card">
@@ -202,7 +227,7 @@ export default function BuildNow() {
           </section>
         )}
       </section>
-      {LastCom && (
+      {allSelected && (
         <div className="total_rate">
           <h3>Total Price: ₹{totalRate}</h3>
           <button onClick={handleBookNow}>Book Now</button>
