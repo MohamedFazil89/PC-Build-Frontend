@@ -5,6 +5,7 @@ import Signup from './Components/SignUp';
 import Dashboard from './Components/Dashboard';
 import Booking from './Components/Booking';
 import BuildNow from './Components/BuildNow';
+import Checkout from './Components/CheckOut';
 import "./App.css"
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/Booking" element={<Booking />} />
         <Route path="/CustomBuild" element={<BuildNow />} />
+        <Route path="/checkout" element={<Checkout />} />
+
 
 
       </Routes>

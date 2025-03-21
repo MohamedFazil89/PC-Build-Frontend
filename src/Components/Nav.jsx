@@ -37,9 +37,7 @@ export default function Nav() {
 
      
 
-      <label htmlFor="nav-check" className='navCheck nav-cart'>
-      <li className='Carts' onClick={OpenCard}><a href="#" className='Cart'>COMPONENTS</a></li>
-      </label>
+    
 
      
       </label>
