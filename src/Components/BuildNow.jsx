@@ -82,6 +82,9 @@ export default function BuildNow() {
     setActiveComponent(componentName);
   };
 
+  // Get the selected id for the current active category
+  const currentSelectedId = buildComponents[typeMap[activeComponent]];
+
   return (
     <div className="Custom_PC_Container">
       <nav className="Component_Names">
@@ -144,7 +147,12 @@ export default function BuildNow() {
       </nav>
       <section className="ComponentList">
         {componentList.map((product, index) => (
-          <div key={index} className="product_card">
+          <div
+            key={index}
+            className={`product_card ${
+              currentSelectedId === product.id ? "selected" : ""
+            }`}
+          >
             <img src={product.img} alt={product.title} className="product_img" />
             <span className="product_description">
               <p className="product_title">{product.title}</p>
@@ -185,6 +193,7 @@ export default function BuildNow() {
       {LastCom && (
         <div className="total_rate">
           <h3>Total Price: ₹{totalRate}</h3>
+          <button>Book Now</button>
         </div>
       )}
     </div>
