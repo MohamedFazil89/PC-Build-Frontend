@@ -1,6 +1,9 @@
 import "./styles/BuildNow.css";
 import PC_Components from "./PC_Components";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setSelectedComponents } from "../redux/ComponentSlice";
+import { useNavigate } from "react-router-dom";
 
 const typeMap = {
   "Processor": "processor",
@@ -27,7 +30,10 @@ export default function BuildNow() {
     cooling_System: 0,
     operatingsystem: 0,
   });
-  
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   // State to keep track of the active nav item
   const [activeComponent, setActiveComponent] = useState("Processor");
 
@@ -82,6 +88,11 @@ export default function BuildNow() {
     setActiveComponent(componentName);
   };
 
+  const handleBookNow = () => {
+    dispatch(setSelectedComponents(selectedComponents));
+    navigate("/checkout");
+  };
+
   // Get the selected id for the current active category
   const currentSelectedId = buildComponents[typeMap[activeComponent]];
 
@@ -89,55 +100,55 @@ export default function BuildNow() {
     <div className="Custom_PC_Container">
       <nav className="Component_Names">
         <ul>
-          <li 
+          <li
             className={activeComponent === "Processor" ? "active" : ""}
             onClick={() => handleNavClick("Processor", Processor)}
           >
             Processor
           </li>
-          <li 
+          <li
             className={activeComponent === "Motherboard" ? "active" : ""}
             onClick={() => handleNavClick("Motherboard", Motherboard)}
           >
             Motherboard
           </li>
-          <li 
+          <li
             className={activeComponent === "Memory (RAM)" ? "active" : ""}
             onClick={() => handleNavClick("Memory (RAM)", Memory_RAM)}
           >
             Memory (RAM)
           </li>
-          <li 
+          <li
             className={activeComponent === "Storage (SSD/HDD)" ? "active" : ""}
             onClick={() => handleNavClick("Storage (SSD/HDD)", Storage_SSD_HDD)}
           >
             Storage (SSD/HDD)
           </li>
-          <li 
+          <li
             className={activeComponent === "Graphics Card (GPU)" ? "active" : ""}
             onClick={() => handleNavClick("Graphics Card (GPU)", Graphics_Card)}
           >
             Graphics Card (GPU)
           </li>
-          <li 
+          <li
             className={activeComponent === "Power Supply Unit (PSU)" ? "active" : ""}
             onClick={() => handleNavClick("Power Supply Unit (PSU)", Power_Supply_Unit)}
           >
             Power Supply Unit (PSU)
           </li>
-          <li 
+          <li
             className={activeComponent === "Computer Case" ? "active" : ""}
             onClick={() => handleNavClick("Computer Case", Computer_Case)}
           >
             Computer Case
           </li>
-          <li 
+          <li
             className={activeComponent === "Cooling System" ? "active" : ""}
             onClick={() => handleNavClick("Cooling System", Cooling_System)}
           >
             Cooling System
           </li>
-          <li 
+          <li
             className={activeComponent === "Operating System" ? "active" : ""}
             onClick={() => handleNavClick("Operating System", Operating_System)}
           >
@@ -149,9 +160,8 @@ export default function BuildNow() {
         {componentList.map((product, index) => (
           <div
             key={index}
-            className={`product_card ${
-              currentSelectedId === product.id ? "selected" : ""
-            }`}
+            className={`product_card ${currentSelectedId === product.id ? "selected" : ""
+              }`}
           >
             <img src={product.img} alt={product.title} className="product_img" />
             <span className="product_description">
@@ -168,6 +178,8 @@ export default function BuildNow() {
             </span>
           </div>
         ))}
+        <p>Your Cart</p>
+
         {LastCom && (
           <section className="BookPC">
             {selectedComponents.map((product, index) => (
@@ -193,7 +205,7 @@ export default function BuildNow() {
       {LastCom && (
         <div className="total_rate">
           <h3>Total Price: ₹{totalRate}</h3>
-          <button>Book Now</button>
+          <button onClick={handleBookNow}>Book Now</button>
         </div>
       )}
     </div>
